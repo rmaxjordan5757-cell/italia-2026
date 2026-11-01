@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102b2b">
+<title>Italia 2026 — Nuestro viaje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#142b3b;--muted:#667783;--cream:#f4f0e8;--paper:#fffdf8;--terra:#bd5b43;--sage:#d9e4df;--line:#e4ddd1;--gold:#e4bd78;--ocean:#214f5a;--plum:#56394b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}a{color:inherit}.serif{font-family:"Cormorant Garamond","Playfair Display",Georgia,serif}
+.hero{min-height:90vh;color:white;position:relative;display:flex;align-items:flex-end;overflow:hidden;background-color:#173d4a;background-image:linear-gradient(90deg,rgba(10,32,48,.82),rgba(10,32,48,.15)),linear-gradient(0deg,rgba(10,32,48,.68),transparent 70%),url('https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=2200&q=85') center/cover}
+.hero:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,.04) 35%,rgba(0,0,0,.48));pointer-events:none}
+/* Gran bandera italiana animada como fondo de portada */
+.flag-backdrop{position:absolute;z-index:0;inset:-2%;display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden;opacity:.62;filter:saturate(1.18);transform-origin:center;animation:flagBackdropWave 8s ease-in-out infinite;pointer-events:none}
+.flag-backdrop span{display:block;height:104%;box-shadow:inset -18px 0 38px rgba(0,0,0,.08),inset 18px 0 38px rgba(255,255,255,.06)}
+.flag-backdrop .green{background:linear-gradient(100deg,#007b3a,#009246 45%,#00a653)}.flag-backdrop .white{background:linear-gradient(100deg,#e9e8df,#fff 45%,#f4f1e9)}.flag-backdrop .red{background:linear-gradient(100deg,#b51f2c,#ce2b37 48%,#e23a45)}
+.flag-backdrop:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 15%,rgba(255,255,255,.2) 27%,transparent 42%,rgba(0,0,0,.12) 65%,transparent 78%);background-size:200% 100%;animation:flagShimmer 6s ease-in-out infinite}
+@keyframes flagBackdropWave{0%{transform:perspective(1000px) rotateY(-2deg) skewY(-.4deg) scale(1.03)}50%{transform:perspective(1000px) rotateY(2deg) skewY(.4deg) scale(1.06)}100%{transform:perspective(1000px) rotateY(-2deg) skewY(-.4deg) scale(1.03)}}
+@keyframes flagBackdropEntrance{from{opacity:0;transform:scale(1.14) translateY(2%)}to{opacity:.62;transform:scale(1.03) translateY(0)}}
+.hero .flag-backdrop{animation:flagBackdropEntrance 1.5s ease-out both,flagBackdropWave 8s ease-in-out 1.5s infinite}
+@media(prefers-reduced-motion:reduce){.hero .flag-backdrop,.flag-backdrop:after{animation:none!important}}
+@keyframes flagShimmer{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.nav{position:relative;z-index:3;position:absolute;z-index:3;top:0;left:0;right:0;padding:26px 6vw;display:flex;justify-content:space-between;align-items:center;color:#fff}.brand{letter-spacing:.18em;font-size:12px;font-weight:700}.nav a{text-decoration:none;font-size:12px;margin-left:24px;opacity:.9}
+.italy-flag{width:48px;height:32px;display:flex;overflow:hidden;border-radius:3px;box-shadow:0 5px 18px rgba(0,0,0,.28);transform-origin:left center;animation:flagWave 3.5s ease-in-out infinite;position:relative;flex-shrink:0}
+.italy-flag span{width:33.333%;height:100%;display:block}.italy-flag .green{background:#009246}.italy-flag .white{background:#fff}.italy-flag .red{background:#ce2b37}
+.italy-flag:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(255,255,255,.2),transparent 38%,rgba(0,0,0,.08));pointer-events:none}
+@keyframes flagWave{0%,100%{transform:perspective(120px) rotateY(-7deg) skewY(-1deg)}50%{transform:perspective(120px) rotateY(7deg) skewY(1deg)}}.hero-content{position:relative;z-index:2;padding:8vw 9vw 9vw;max-width:900px;animation:rise 1s ease both}.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:#e9c99a}.hero h1{font:700 clamp(76px,11vw,142px)/.82 "Cormorant Garamond","Playfair Display",Georgia,serif;letter-spacing:-.045em;margin:26px 0 30px;text-shadow:0 8px 35px rgba(0,0,0,.2)}.hero p{font-size:16px;line-height:1.7;max-width:510px;color:#f0eee8}.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:35px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.hero-meta span:before{content:"✦";color:var(--gold);margin-right:9px}
+main{max-width:1200px;margin:auto;padding:0 6vw}.intro{padding:100px 0 75px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}.intro h2{font:600 clamp(36px,5vw,58px)/1.1 "Cormorant Garamond","Playfair Display",Georgia,serif;margin:12px 0}.intro p{color:var(--muted);line-height:1.8;font-size:14px}.kicker{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:25px 0;margin-bottom:80px}.stat{padding:0 22px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border:0}.stat strong{font:600 28px "Cormorant Garamond","Playfair Display",Georgia,serif;display:block}.stat small{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}.section-head h2{font:700 48px/1 "Cormorant Garamond","Playfair Display",Georgia,serif;letter-spacing:-.025em;margin:10px 0;color:var(--ink)}.section-head p{font-size:12px;color:var(--muted)}
+.destinations{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:100px}.destination{height:260px;border-radius:8px;overflow:hidden;position:relative;color:white;text-decoration:none;isolation:isolate;background:linear-gradient(145deg,#244b59,#b96b51)}.destination img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1);background:linear-gradient(135deg,#214f5a,#bd765d)}.destination:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.68),transparent 65%);z-index:0}.destination:hover img{transform:scale(1.08);filter:saturate(1.12) contrast(1.04)}.destination div{position:absolute;bottom:20px;left:20px;z-index:1}.destination small{font-size:10px;letter-spacing:.18em;text-transform:uppercase}.destination h3{font:600 28px "Cormorant Garamond","Playfair Display",Georgia,serif;margin:5px 0}
+.itinerary{padding:20px 0 100px}.day{display:grid;grid-template-columns:170px 1fr;gap:34px;border-top:1px solid var(--line);padding:31px 0;scroll-margin-top:25px;transition:background .25s}.day-date{padding-top:5px}.day-date .num{font:700 54px/.9 "Cormorant Garamond","Playfair Display",Georgia,serif;display:block;color:var(--terra)}.day-date small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:700}.day-main{min-width:0}.day-toggle{width:100%;border:0;background:none;color:inherit;display:flex;align-items:center;justify-content:space-between;text-align:left;padding:0;cursor:pointer}.day-toggle h3{font:700 31px/1.05 "Cormorant Garamond","Playfair Display",Georgia,serif;letter-spacing:-.015em;margin:0 0 8px;color:var(--ink)}.day-toggle p{margin:0;color:var(--muted);font-size:12px}.plus{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:20px;transition:.3s;flex-shrink:0}.day.open .plus{transform:rotate(45deg);background:var(--terra);color:white;border-color:var(--terra)}.day-content{display:none;padding:24px 0 0;animation:fade .35s ease}.day.open .day-content{display:block}.event{display:grid;grid-template-columns:90px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid #eeece5}.event:last-child{border:0}.time{font-size:11px;color:var(--terra);font-weight:700;letter-spacing:.04em;padding-top:2px}.event h4{font-size:13px;margin:0 0 5px}.event p{font-size:12px;line-height:1.65;color:var(--muted);margin:0;max-width:760px}.note{margin-top:18px;padding:16px 18px;background:#f0e9df;border-left:3px solid var(--terra);font-size:12px;line-height:1.7;color:#66594e;border-radius:0 4px 4px 0}
+.gallery{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:180px 180px;gap:12px;margin:0 0 100px}.gallery img{width:100%;height:100%;object-fit:cover;border-radius:4px;transition:filter .4s}.gallery img:hover{filter:saturate(1.25)}.gallery img:first-child{grid-row:span 2}
+
+/* Estilos para la sección de vocabulario */
+.vocab-section{padding:20px 0 100px}
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:30px}
+.vocab-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:24px;box-shadow:0 4px 15px rgba(0,0,0,.03)}
+.vocab-card h3{font:700 24px "Cormorant Garamond","Playfair Display",Georgia,serif;color:var(--terra);margin:0 0 16px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.vocab-list{list-style:none;padding:0;margin:0}
+.vocab-list li{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px dashed #e8e2d8;font-size:13px}
+.vocab-list li:last-child{border-bottom:none}
+.vocab-it{font-weight:700;color:var(--ink)}
+.vocab-es{color:var(--muted);font-style:italic}
+
+.alerts{background:linear-gradient(135deg,#142b3b 0%,#214f5a 65%,#56394b 130%);color:white;padding:65px 7vw;border-radius:10px;margin:0 0 100px;box-shadow:0 24px 60px rgba(20,43,59,.14)}.alerts h2{font:600 40px "Cormorant Garamond","Playfair Display",Georgia,serif;margin:8px 0 28px}.alert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.alert-item{padding:17px 18px;border:1px solid rgba(255,255,255,.15);border-radius:4px;display:flex;gap:13px;font-size:12px;line-height:1.6;color:#e7e9e2}.alert-item b{display:block;color:#e7c28d;margin-bottom:3px}.alert-icon{font-size:17px}
+.footer{background:#eae8df;padding:50px 6vw;text-align:center}.footer h2{font:700 48px/1 "Cormorant Garamond","Playfair Display",Georgia,serif;margin:12px;color:var(--ink)}.footer p{font-size:12px;color:var(--muted);line-height:1.8}.top{position:fixed;bottom:22px;right:22px;width:42px;height:42px;border-radius:50%;background:var(--terra);color:white;display:grid;place-items:center;text-decoration:none;box-shadow:0 6px 20px #0002;opacity:0;pointer-events:none;transition:.3s}.top.show{opacity:1;pointer-events:auto}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.hero{min-height:82vh}.nav{position:relative;z-index:3;padding:20px 6vw}.nav-links{display:none}.hero-content{padding:12vw 7vw 18vw}.hero h1{font-size:clamp(68px,18vw,104px)}.section-head h2{font-size:39px}.day-toggle h3{font-size:25px}.day-date .num{font-size:42px}.intro{grid-template-columns:1fr;gap:15px;padding:70px 0 45px}.stats{grid-template-columns:repeat(2,1fr);row-gap:22px;margin-bottom:60px}.stat:nth-child(2){border:0}.stat:nth-child(3){padding-left:0}.destinations{grid-template-columns:repeat(2,1fr);margin-bottom:70px}.destination{height:210px}.section-head h2{font-size:34px}.day{grid-template-columns:75px 1fr;gap:15px;padding:23px 0}.day-date .num{font-size:32px}.day-toggle h3{font-size:20px}.event{grid-template-columns:66px 1fr;gap:8px}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:170px 130px 130px;margin-bottom:70px}.gallery img:first-child{grid-row:span 2}.gallery img:last-child{grid-column:span 2}.alerts{padding:45px 22px;margin-bottom:70px}.alerts h2{font-size:33px}.alert-grid{grid-template-columns:1fr}.section-head p{max-width:110px;text-align:right;line-height:1.5}}
+.hero{background-color:#214f5a}.destination img,.gallery img{background:linear-gradient(135deg,#214f5a,#bd765d)}\n@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media(max-width:760px){.flag-backdrop{opacity:.38}.flag-backdrop span{box-shadow:none}}
+</style>
+</head>
+<body>
+<header class="hero" id="inicio">
+  <div class="flag-backdrop" aria-hidden="true"><span class="green"></span><span class="white"></span><span class="red"></span></div>
+  <nav class="nav"><div class="brand">STIVEN & ERIKA <span style="color:#e9c99a">✦</span> ITALIA 2026</div><div class="italy-flag" role="img" aria-label="Bandera de Italia"><span class="green"></span><span class="white"></span><span class="red"></span></div><div class="nav-links"><a href="#destinos">Destinos</a><a href="#ruta">Itinerario</a><a href="#vocabulario">Italiano para Erika</a><a href="#importante">Antes de viajar</a></div></nav>
+  <div class="hero-content"><div class="eyebrow">Nuestro viaje · 5 — 18 noviembre 2026</div><h1>La dolce<br>vita.</h1><p>Dos semanas para descubrir ciudades, compartir mesas, reencontrarnos con amigos y guardar recuerdos entre canales, historia y mar.</p><div class="hero-meta"><span>Venecia</span><span>Trieste</span><span>Roma</span><span>Eslovenia</span></div></div>
+</header>
+<main>
+<section class="intro"><div><div class="kicker">Una aventura para recordar</div><h2>Italia nos espera.</h2></div><p>Un recorrido diseñado para disfrutar sin correr: grandes monumentos, rincones junto al Adriático, gastronomía, amigos y tiempo en pareja. Guarda esta página y úsala como vuestra guía durante el viaje.</p></section>
+<div class="stats"><div class="stat"><strong>14</strong><small>Días de aventura</small></div><div class="stat"><strong>4</strong><small>Destinos principales</small></div><div class="stat"><strong>05—18</strong><small>Noviembre 2026</small></div><div class="stat"><strong>2</strong><small>Viajeros</small></div></div>
+<section id="destinos"><div class="section-head"><div><div class="kicker">El recorrido</div><h2 class="serif">Cuatro lugares, mil recuerdos</h2></div><p>Explora cada destino</p></div>
+<div class="destinations">
+<a class="destination" href="#dia-1"><img loading="lazy" src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80" alt="Canales de Venecia"><div><small>5—6 noviembre</small><h3>Venecia</h3></div></a>
+<a class="destination" href="#dia-3"><img loading="lazy" src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80" alt="Paisaje italiano"><div><small>6—17 noviembre</small><h3>Trieste</h3></div></a>
+<a class="destination" href="#dia-6"><img loading="lazy" src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Coliseo de Roma"><div><small>9—11 noviembre</small><h3>Roma</h3></div></a>
+<a class="destination" href="#dia-12"><img loading="lazy" src="https://images.unsplash.com/photo-1555990793-da11153b2473?auto=format&fit=crop&w=800&q=80" alt="Costa mediterránea"><div><small>16 noviembre</small><h3>Koper</h3></div></a>
+</div></section>
+<section id="ruta" class="itinerary"><div class="section-head"><div><div class="kicker">Día a día</div><h2 class="serif">El itinerario</h2></div><p>Abre cada día<br>para ver los detalles</p></div>
+<div id="days"></div></section>
+<div class="gallery">
+<img loading="lazy" src="https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1000&q=80" alt="Venecia al atardecer">
+<img loading="lazy" src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=700&q=80" alt="Roma">
+<img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80" alt="Paisaje de montaña">
+<img loading="lazy" src="https://images.unsplash.com/photo-1473116763249-2ffaa01cf1?auto=format&fit=crop&w=700&q=80" alt="Paisaje costero" onerror="this.src='https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=700&q=80'">
+</div>
+
+<section id="vocabulario" class="vocab-section">
+  <div class="section-head">
+    <div>
+      <div class="kicker">Guía rápida de memorización</div>
+      <h2 class="serif">Italiano para Erika 🇮🇹</h2>
+    </div>
+    <p>Palabras y expresiones clave<br>para defenderse en el viaje</p>
+  </div>
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <h3>Cortesía y Saludos</h3>
+      <ul class="vocab-list">
+        <li><span class="vocab-it">Ciao!</span><span class="vocab-es">Hola / Adiós</span></li>
+        <li><span class="vocab-it">Buongiorno</span><span class="vocab-es">Buenos días</span></li>
+        <li><span class="vocab-it">Buonasera</span><span class="vocab-es">Buenas tardes / noches</span></li>
+        <li><span class="vocab-it">Grazie / Grazie mille</span><span class="vocab-es">Gracias / Muchas gracias</span></li>
+        <li><span class="vocab-it">Prego</span><span class="vocab-es">De nada / Adelante</span></li>
+        <li><span class="vocab-it">Per favore / Per piacere</span><span class="vocab-es">Por favor</span></li>
+        <li><span class="vocab-it">Scusi / Scusa</span><span class="vocab-es">Disculpe / Disculpa</span></li>
+        <li><span class="vocab-it">Arrivederci</span><span class="vocab-es">Hasta luego</span></li>
+      </ul>
+    </div>
+    <div class="vocab-card">
+      <h3>Restaurante y Cafetería</h3>
+      <ul class="vocab-list">
+        <li><span class="vocab-it">Un caffè, per favore</span><span class="vocab-es">Un café, por favor</span></li>
+        <li><span class="vocab-it">Il conto, per favore</span><span class="vocab-es">La cuenta, por favor</span></li>
+        <li><span class="vocab-it">Acqua naturale / frizzante</span><span class="vocab-es">Agua sin gas / con gas</span></li>
+        <li><span class="vocab-it">Vino rosso / bianco</span><span class="vocab-es">Vino tinto / blanco</span></li>
+        <li><span class="vocab-it">Buon appetito!</span><span class="vocab-es">¡Buen provecho!</span></li>
+        <li><span class="vocab-it">Dov'è il bagno?</span><span class="vocab-es">¿Dónde está el baño?</span></li>
+        <li><span class="vocab-it">Delizioso / Molto buono</span><span class="vocab-es">Delicioso / Muy bueno</span></li>
+        <li><span class="vocab-it">Un tavolo per due</span><span class="vocab-es">Una mesa para dos</span></li>
+      </ul>
+    </div>
+    <div class="vocab-card">
+      <h3>Direcciones y Transporte</h3>
+      <ul class="vocab-list">
+        <li><span class="vocab-it">Dov'è...?</span><span class="vocab-es">¿Dónde está...?</span></li>
+        <li><span class="vocab-it">Stazione / Aeroporto</span><span class="vocab-es">Estación / Aeropuerto</span></li>
+        <li><span class="vocab-it">Biglietto</span><span class="vocab-es">Boleto / Billete</span></li>
+        <li><span class="vocab-it">Destra / Sinistra</span><span class="vocab-es">Derecha / Izquierda</span></li>
+        <li><span class="vocab-it">Sempre dritto</span><span class="vocab-es">Todo recto</span></li>
+        <li><span class="vocab-it">Uscita / Entrata</span><span class="vocab-es">Salida / Entrada</span></li>
+        <li><span class="vocab-it">A che ora parte?</span><span class="vocab-es">¿A qué hora sale?</span></li>
+        <li><span class="vocab-it">Treno / Autobus</span><span class="vocab-es">Tren / Autobús</span></li>
+      </ul>
+    </div>
+    <div class="vocab-card">
+      <h3>Frases Útiles y Emergencias</h3>
+      <ul class="vocab-list">
+        <li><span class="vocab-it">Sì / No</span><span class="vocab-es">Sí / No</span></li>
+        <li><span class="vocab-it">Non parlo italiano</span><span class="vocab-es">No hablo italiano</span></li>
+        <li><span class="vocab-it">Parla spagnolo / inglese?</span><span class="vocab-es">¿Habla español / inglés?</span></li>
+        <li><span class="vocab-it">Non ho capito</span><span class="vocab-es">No entendí</span></li>
+        <li><span class="vocab-it">Quanto costa?</span><span class="vocab-es">¿Cuánto cuesta?</span></li>
+        <li><span class="vocab-it">Aiuto!</span><span class="vocab-es">¡Ayuda!</span></li>
+        <li><span class="vocab-it">Posso pagare con carta?</span><span class="vocab-es">¿Puedo pagar con tarjeta?</span></li>
+        <li><span class="vocab-it">Va bene!</span><span class="vocab-es">¡Está bien! / ¡De acuerdo!</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="alerts" id="importante"><div class="kicker" style="color:#e9c99a">Checklist de viaje</div><h2>Pequeños detalles,<br>grandes tranquilidad.</h2><div class="alert-grid">
+<div class="alert-item"><span class="alert-icon">🎟️</span><div><b>Coliseo · 10 de noviembre</b>Entrada confirmada para las 10:30. Llevar documento y billete descargado.</div></div>
+<div class="alert-item"><span class="alert-icon">🚌</span><div><b>Venecia → Trieste</b>Reservar el tren del 6 de noviembre con margen para las gestiones de llegada.</div></div>
+<div class="alert-item"><span class="alert-icon">⛪</span><div><b>Vaticano</b>Confirmar entradas a los Museos Vaticanos si queréis visitar la Capilla Sixtina.</div></div>
+<div class="alert-item"><span class="alert-icon">🧭</span><div><b>Grotta Gigante y Koper</b>Verificar visita guiada y horarios de autobús de ida y vuelta.</div></div>
+<div class="alert-item"><span class="alert-icon">🛂</span><div><b>Documentación para Eslovenia</b>Confirmar con abogado o Questura que los documentos actuales permiten salir y regresar a Italia.</div></div>
+<div class="alert-item"><span class="alert-icon">✈️</span><div><b>Vuelo · 18 de noviembre, 06:20</b>Asegurar traslado a Marco Polo con suficiente antelación. No depender de un último autobús sin confirmar.</div></div>
+<div class="alert-item"><span class="alert-icon">🎂</span><div><b>Cumpleaños de Erika · 14 de noviembre</b>Reservar presupuesto para su regalo y disfrutar el día juntos.</div></div>
+<div class="alert-item"><span class="alert-icon">📱</span><div><b>Antes de salir</b>Descargar mapas, billetes, reservas y documentos para consultarlos sin conexión.</div></div>
+</div></section>
+</main>
+<footer class="footer"><div class="kicker">5 — 18 noviembre 2026</div><h2>Que empiece la aventura.</h2><p>Hecho para Stiven & Erika · Italia, Eslovenia y todos los recuerdos que vienen.</p></footer>
+<a href="#inicio" class="top" id="top" aria-label="Volver arriba">↑</a>
+<script>
+const days=[
+["05","Jueves 5 de noviembre","Llegada a Venecia","Llegar, instalarse y disfrutar de la ciudad iluminada.","19:00|Llegada de Erika al aeropuerto Marco Polo|Control de pasaportes y recogida de equipaje. Salida estimada alrededor de las 19:40 si no hay retrasos.","20:00|Traslado a Venecia|Autobús ACTV línea 5 o ATVO hasta Piazzale Roma; continuar a pie o en vaporetto según el alojamiento y el equipaje.","21:00|Check-in en Locanda Ruga Rialto|San Polo 1016, Venezia. Confirmar previamente cómo llegar desde Piazzale Roma.","21:30|Cena y paseo romántico|Recorrer San Polo, acercarse al puente de Rialto y contemplar el Gran Canal iluminado. Cena sencilla para cuidar el presupuesto.","23:00|Descanso|Regreso al hotel."],
+["06","Viernes 6 de noviembre","Venecia por la mañana → Trieste","Rialto, San Marcos, barrios históricos y traslado en tren.","07:40|Preparar el día|Ducharse, desayunar y dejar las maletas listas.","08:40|Puente de Rialto|Desayuno y paseo por el puente y las calles comerciales del entorno.","09:20|Piazza San Marco y Palacio Ducal|Contemplar la basílica desde el exterior y continuar hasta el Palacio Ducal. No programar interiores por falta de tiempo.","10:30|Riva degli Schiavoni|Pasear junto a la laguna; vaporetto opcional si el presupuesto lo permite y termina cerca de Rialto o la estación.","11:30|Mercado de Rialto y San Polo|Visitar el mercado por la mañana, cuando los puestos de alimentos suelen tener más actividad.","12:30|Almuerzo en San Polo|Comer cerca del alojamiento para facilitar la recogida del equipaje.","13:30|Basílica dei Frari y Scuola Grande di San Rocco|Visitar ambos lugares próximos. Si falta tiempo, priorizar Frari.","14:45|Campo San Polo|Paseo tranquilo por el barrio histórico.","15:15|Equipaje y estación|Ir a Venezia Santa Lucia. Apuntar a un tren entre 16:00 y 16:30, confirmado con margen.","18:00–20:00|Llegada a Trieste y gestiones|Comprar SIM y billetes de autobús, recoger el equipaje en casa de Brayan y dirigirse al alojamiento.","22:00|Descanso|Dejar todo organizado en el Airbnb.","Consejo|Día con muchas actividades|Si el tren sale antes, eliminar la Scuola Grande di San Rocco antes que arriesgar la conexión."],
+["07","Sábado 7 de noviembre","Trieste, amigos y noche de fiesta","Un día social para compartir con los amigos de Stiven.","09:00|Desayuno y organización|Organizar el equipaje y hacer una limpieza básica del apartamento.","12:00|Centro de Trieste|Giardino Pubblico Muzio de Tommasini, Viale XX Settembre, cafeterías y calles comerciales. Comprar SIM y revisar transporte.","16:00|Pausa en el Airbnb|Descansar y prepararse para la cena.","19:00|Salida a cenar|Restaurante chino con los amigos de Stiven; cena aproximada de 20:00 a 21:00.","21:00|Reunión con amigos|Erika, Brayan y amigos: juegos, música, bebidas y snacks.","23:00|Discoteca opcional|Si se confirma el plan. Regreso previsto entre las 03:00 y las 04:00 del domingo."],
+["08","Domingo 8 de noviembre","Miramare, Barcola y centro histórico","Castillo y costa por la mañana; plazas y canales por la tarde.","09:00|Desayuno tranquilo|Recuperarse de la noche anterior.","10:00|Salida hacia Miramare|Ir primero al área del castillo y sus jardines.","10:30–12:00|Castillo de Miramare|Priorizar exteriores, jardines y vistas al mar.","12:00–12:45|Barcola|Paseo junto al mar, si el tiempo y el transporte lo permiten.","13:00|Almuerzo económico|Regreso al centro para comer.","14:00|Teatro Romano|Visita exterior y paseo por las calles históricas.","15:00|Piazza Unità d’Italia y Canal Grande|Visitar también la iglesia de Sant’Antonio Nuovo.","16:15–16:45|Muelle y fotografías|Paseo y fotos junto al mar.","17:00–19:30|Tiempo en pareja|Cafetería, paseo por el centro y tiempo libre.","20:00|Cena ligera|Regreso al apartamento y una copa de vino.","Importante|Horario de Miramare|En noviembre el parque cierra temprano, alrededor de las 16:00 según el horario indicado. Confirmar el acceso interior al museo."],
+["09","Lunes 9 de noviembre","Mañana en pareja y viaje nocturno a Roma","Día flexible antes del autobús nocturno.","09:00|Desayuno juntos|Mañana libre para descansar y compartir.","12:00|Almuerzo|En casa o en un local económico.","14:00|Preparar Roma|Organizar equipaje, cargar teléfonos, descargar mapas y preparar agua, snacks y documentos.","17:30|Cena temprana|Comprobar estación de salida y guardar los billetes.","19:30|Salida hacia la estación|Llegar con margen para localizar la plataforma.","20:30|FlixBus a Roma|Salida prevista. Viaje estimado: 9 h 25 min; llegada el martes sobre las 06:10 según el billete."],
+["10","Martes 10 de noviembre","Roma monumental","Coliseo, Foro Romano, Vaticano exterior y centro histórico.","06:10|Llegada a Roma|Localizar la parada, desayunar cerca y dejar equipaje en consigna segura si hace falta.","09:30|Llegar al Coliseo|Estar en la entrada con antelación; tener documento y entrada descargada.","10:30|Coliseo · entrada confirmada|Visita aproximada de 75 minutos. Revisar la modalidad de entrada y los niveles incluidos.","11:45|Foro Romano y Palatino|Reservar unas dos horas. En noviembre el área cierra a las 16:30 y la última entrada es a las 15:30, según el itinerario.","13:45|Almuerzo rápido|Comer cerca de Monti o del Coliseo.","14:30|Traslado al Vaticano|Priorizar Plaza de San Pedro y Basílica si el acceso está abierto y hay tiempo. Museos solo con reserva confirmada.","15:45|Castel Sant’Angelo|Contemplar el castillo desde fuera y cruzar el puente junto al Tíber.","16:30|Fontana di Trevi|Paseo y fotografías; la hora puede variar según el ritmo del día.","17:15|Piazza di Spagna y Pincio|Si vais bien de tiempo, caminar hasta la terraza del Pincio.","18:30|Cena temprana|Cenar y pasear según la ubicación de la estación.","20:00|Regreso a la estación|Confirmar la plataforma y llegar con margen.","23:00|Autobús a Trieste|Salida prevista.","Prioridad|El día más exigente|No intentar añadir todos los interiores. La entrada del Coliseo y el autobús nocturno son los horarios que más conviene proteger.","Vaticano|Museos Vaticanos|Sin entrada confirmada, no contar con visitar Museos y Capilla Sixtina. La plaza y la basílica dependen de acceso y controles."],
+["11","Miércoles 11 de noviembre","Descanso y Trieste romántica","Recuperar energía después del autobús y disfrutar de una tarde tranquila.","08:55–09:15|Llegada prevista a Trieste|Desayuno y regreso al Airbnb.","10:30–12:30|Descanso|Ducha y recuperación del viaje.","13:00|Almuerzo juntos|Comida tranquila.","14:00|Castillo de San Giusto|Salida hacia el castillo y sus miradores.","14:30–16:00|Castillo y catedral|Visita del entorno y vistas de la ciudad.","16:00–17:30|Calles históricas|Bajar caminando hacia el centro.","18:00|Canal Grande|Caminata romántica junto al canal.","19:00|Cena|Cerca del canal o Piazza Sant’Antonio Nuovo.","21:00|Descanso|Regreso al Airbnb.","Alternativa|Si hay cansancio|Visitar solo los alrededores del castillo y disfrutar de una cena tranquila."],
+["12","Jueves 12 de noviembre","Questura y día de pausa","Mañana de gestiones y tarde flexible.","07:30|Gestiones de Stiven|Salida para la Questura y trámites correspondientes.","Mañana|Tiempo de Erika|Descansar, desayunar y organizar el apartamento.","12:30–13:30|Almuerzo juntos|Si los trámites lo permiten. Mantener la tarde flexible por si hay que volver a la Questura.","16:00|Compra de alimentos|Comprar para desayunos y almuerzos de los siguientes días.","19:00|Cena en casa|Salchipapa. Reunión con amigos solo si se confirma.","23:00|Descanso|Noche tranquila."],
+["13","Viernes 13 de noviembre","Grotta Gigante y Muggia","Naturaleza por la mañana y pueblo marinero por la tarde.","07:40|Desayuno y preparación|Ropa cómoda y chaqueta para la cueva.","08:30|Salida hacia Grotta Gigante|Comprobar previamente transporte y horario de visita.","09:30–10:30|Visita guiada|Hora orientativa, sujeta a reserva.","10:30–11:30|Fotos y traslado|Tiempo para salir y organizar el siguiente trayecto.","12:00–13:00|Regreso y almuerzo|Comida sencilla en Trieste.","13:30–14:30|Traslado a Muggia|Comprobar conexiones marítimas o de autobús.","14:30–17:30|Muggia|Puerto, casco antiguo, Piazza Marconi y callejuelas.","17:30–19:00|Regreso a Trieste|Según conexiones disponibles.","19:30|Cena en casa|Descanso.","Importante|Grotta Gigante|La visita requiere guía y horario específico. Reservar antes de comprar otros billetes. Para Muggia, no depender del barco sin confirmar servicio."],
+["14","Sábado 14 de noviembre","Compras y cumpleaños de Erika","Un día especial para celebrar y compartir con amigos.","08:00|Desayuno|Mañana tranquila.","09:00–11:30|Tiempo en el apartamento|Descanso y preparación.","12:00|Almuerzo fuera|Salir a comer.","13:40|Autobús al centro comercial|Comprobar línea y parada antes de salir.","14:00–17:30|Compras y regalo|Elegir el regalo de cumpleaños de Erika y detalles para la familia.","16:00 aprox.|Pausa dulce|Helado, café o merienda.","18:00|Regreso al Airbnb|Volver y dejar las compras.","18:40|Prepararse|Ducha y arreglarse.","20:00|Reunión con amigos|Plan de fin de semana con los amigos de Stiven.","Consejo|Presupuesto de compras|Comprar primero el regalo principal de Erika y dejar los recuerdos familiares para el final."],
+["15","Domingo 15 de noviembre","Senderismo en Sistiana y Duino","Vistas al Adriático por el Sentiero Rilke.","09:00|Desayuno y preparación|Ropa cómoda, agua y algo de comer.","10:00|Salida hacia Sistiana|Verificar el autobús de ida.","11:00|Inicio del paseo|Comenzar la ruta costera.","11:00–13:00|Sentiero Rilke|Senderismo, fotografías y paradas para contemplar el Adriático.","13:00–14:00|Almuerzo|Picnic o local de la zona.","14:00–15:30|Continuar hacia Duino|Solo si las condiciones del sendero lo permiten.","15:30–16:30|Castillo de Duino|Visita exterior o entrada si está abierta y el tiempo lo permite.","16:30–18:00|Regreso a Trieste|Según horarios de transporte.","19:00|Cena en casa|Música y una copa de vino.","22:00|Descanso|Preparar la excursión del lunes.","Atención|Luz y sendero|En noviembre hay menos horas de luz. Comprobar estado del sendero, clima y último autobús. No entrar en túneles o zonas cerradas."],
+["16","Lunes 16 de noviembre","Excursión a Koper · Eslovenia","Una escapada costera práctica desde Trieste, condicionada a documentación y transporte.","06:00|Desayuno temprano|Preparar documentos, agua y algo de comer.","06:30|Ir a la estación de autobuses|Buscar una salida temprana hacia Koper.","07:00–08:00|Autobús orientativo|Confirmar horario exacto para ese lunes.","Mañana|Casco antiguo de Koper|Piazza Tito, Palacio Pretoriano, catedral, calles históricas, puerto y paseo marítimo.","12:30|Almuerzo económico|Probar un plato local o menú del día.","14:00|Paseo y fotografías|Disfrutar del casco histórico y el Adriático.","15:30–17:00|Regreso a Trieste|Elegir un servicio confirmado que deje margen para retrasos.","Noche|Cena y descanso|Organizar el equipaje.","Documentación|Confirmación imprescindible|Llevar pasaporte y documentación italiana vigente. Confirmar con abogado o Questura que los documentos actuales permiten salir y volver a Italia. Si no hay confirmación clara, quedarse en Trieste."],
+["17","Martes 17 de noviembre","Despedida y traslado a Venecia","Último día en Trieste. La prioridad es asegurar el traslado al aeropuerto.","07:40|Desayuno|Comenzar el día con calma.","08:30–10:30|Empacar y revisar|Documentos, equipaje y limpieza del apartamento.","11:00|Check-out del Airbnb|Dejar el alojamiento.","11:00–12:00|Casa de Brayan|Dejar el equipaje allí si él lo confirma.","12:30|Almuerzo fuera|Comida de despedida en Trieste.","14:00–16:00|Último paseo por Barcola|Si el clima acompaña.","16:00–18:00|Descanso y equipaje|Volver a casa de Brayan y revisar todo.","18:00–21:00|Amigos y cena|Tiempo de despedida.","21:00–22:00|Comprobaciones finales|Billetes, transporte al aeropuerto y documentación de Erika.","Noche|Salida hacia Venecia|Según transporte confirmado. No depender de un último autobús nocturno sin verificarlo."],
+["18","Miércoles 18 de noviembre","Regreso a Colombia vía Madrid","Vuelo temprano desde Venecia Marco Polo.","02:00|Hora objetivo para estar en el aeropuerto|Solo si el transporte confirmado lo permite; no es una llegada garantizada por el último autobús.","06:20|Vuelo Venecia → Madrid|Según el itinerario compartido.","09:00|Llegada prevista a Madrid|Terminal T4 según la reserva.","13:15|Vuelo Madrid → Colombia|Revisar terminal y puerta de conexión en la reserva.","Antes de salir|Comprobar vuelos y equipaje|Confirmar si ambos vuelos están en la misma reserva, si el equipaje va facturado hasta Colombia y si hace falta cambiar de terminal. Primero localizar la puerta y pasar controles."]
+];
+const host=document.getElementById('days');
+days.forEach((d,i)=>{
+ const el=document.createElement('article');el.className='day'+(i===0?' open':'');el.id='dia-'+(i+1);
+ const parts=d.slice(4).map(item=>{const p=item.split('|');return `<div class="event"><div class="time">${p[0]}</div><div><h4>${p[1]}</h4><p>${p.slice(2).join('|')}</p></div></div>`}).join('');
+ el.innerHTML=`<div class="day-date"><span class="num">${d[0]}</span><small>${d[1]}</small></div><div class="day-main"><button class="day-toggle" aria-expanded="${i===0}"><div><h3>${d[2]}</h3><p>${d[3]}</p></div><span class="plus">+</span></button><div class="day-content">${parts}</div></div>`;
+ el.querySelector('button').addEventListener('click',()=>{el.classList.toggle('open');el.querySelector('button').setAttribute('aria-expanded',el.classList.contains('open'))});
+ host.appendChild(el);
+});
+
+document.querySelectorAll('img').forEach((img, index) => {
+  img.referrerPolicy = 'no-referrer';
+  img.addEventListener('error', function retryImage() {
+    if (this.dataset.retried) {
+      this.style.opacity = '0';
+      this.parentElement.style.background = 'linear-gradient(135deg,#214f5a,#bd765d)';
+      return;
+    }
+    this.dataset.retried = '1';
+    this.src = index % 2 === 0
+      ? 'https://images.pexels.com/photos/208701/pexels-photo-208701.jpeg?auto=compress&cs=tinysrgb&w=1400'
+      : 'https://images.pexels.com/photos/532263/pexels-photo-532263.jpeg?auto=compress&cs=tinysrgb&w=1200';
+  }, {once:true});
+});
+
+const topBtn=document.getElementById('top');window.addEventListener('scroll',()=>topBtn.classList.toggle('show',window.scrollY>500));
+</script>
+</body></html>
